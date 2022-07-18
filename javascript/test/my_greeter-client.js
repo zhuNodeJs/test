@@ -3,8 +3,6 @@
 var assert = require('assert');
 var MyGreeter = require('../src/MyGreeter.js');
 
-console.log(MyGreeter.Client)
-
 describe('MyGreeter.Client', function () {
 
     describe('Constructor', function () {
