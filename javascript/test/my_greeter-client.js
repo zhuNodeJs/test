@@ -30,4 +30,12 @@ describe('MyGreeter.Client', function () {
             assert.equal(zhu.name === 'zhu Sir' , true);
         })
     })
+
+    describe('static property', function() {
+        it('static class property', function() {
+            var p1 = new MyGreeter.Client().staticP;
+            var p2 = new MyGreeter.Client().staticP;
+            assert.equal(p1 === p2, true);
+        })
+    })
 });
