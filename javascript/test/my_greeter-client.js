@@ -38,4 +38,20 @@ describe('MyGreeter.Client', function () {
             assert.equal(p1 === p2, true);
         })
     })
+
+    describe('get correct greeting', function() {
+        it('correct greeting', function() {
+            var currentHour = new Date().getHours();
+            var getMessages = new MyGreeter.Client().getGreeting();
+            var message = '';
+            if (currentHour >= 6 && currentHour < 12) {
+                message = 'Good morning'
+            } else if (currentHour >= 12 && currentHour < 18) {
+                message = 'Good afternoon'
+            } else {
+                message = 'Good evening'
+            }
+            assert.equal(message === getMessages, true);
+        })
+    })
 });
