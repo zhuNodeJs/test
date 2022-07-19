@@ -3,23 +3,24 @@ var MyGreeter = {
     Client
 }
 function Client (name) {
-    this.name = name + ' Sir';
-    var staticP = 'client';
+    var staticP = 'client'; // 静态属性
+    // 初始化参数
+    this.Constructor = function() {
+        this.name = name + ' Sir';
+        this.currentHour = new Date().getHours();
+    }
 
+    this.Constructor()
+    
     this.getGreeting = function() {
-        var currentHour = new Date().getHours();
-        if (currentHour >= 6 && currentHour < 12) {
+        if (this.currentHour >= 6 && this.currentHour < 12) {
             return 'Good morning'
-        } else if (currentHour >= 12 && currentHour < 18) {
+        } else if (this.currentHour >= 12 && this.currentHour < 18) {
             return 'Good afternoon'
         } else {
             return 'Good evening'
         }
     }
-    this.Constructor = function() {
-        
-    }
-
 }
 
 module.exports = MyGreeter;
